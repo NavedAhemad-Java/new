@@ -1,0 +1,54 @@
+package com.bikkad.IT.springBootJPAAllMethods;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.bikkad.IT.springBootJPAAllMethods.Model.Student;
+
+@SpringBootApplication
+public class SpringBootJpaAllMethodsApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SpringBootJpaAllMethodsApplication.class, args);
+	
+		Student s1 = new Student();
+		s1.setName("Naved");
+		s1.setAddress("Rajura");
+		s1.setEmail("naved@12");
+		s1.setRollno(1);
+		
+		
+		Student s2= new Student();
+		s2.setName("Ahemad");
+		s2.setAddress("chandrapur");
+		s2.setEmail("naved@123");
+		s2.setRollno(2);
+		
+		Student s3 = new Student();
+		s3.setName("zeeshan");
+		s3.setAddress("Hydrabad");
+		s3.setEmail("zee@12");
+		s3.setRollno(3);
+		
+		
+		Student s1 = new Student();
+		s1.setName("Naved");
+		s1.setAddress("Rajura");
+		s1.setEmail("naved@12");
+		s1.setRollno(4)
+		
+		Student s1 = new Student();
+		s1.setName("Naved");
+		s1.setAddress("Rajura");
+		s1.setEmail("naved@12");
+		s1.setRollno(5)
+		
+		Student s1 = new Student();
+		s1.setName("Naved");
+		s1.setAddress("Rajura");
+		s1.setEmail("naved@12");
+		s1.setRollno(6)
+	
+	}
+
+}

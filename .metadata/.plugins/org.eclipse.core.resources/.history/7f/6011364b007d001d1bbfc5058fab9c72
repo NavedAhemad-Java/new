@@ -1,0 +1,147 @@
+package com.bikkad.IT.springBootJPA;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Stream;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+
+import com.bikkad.IT.springBootJPA.Service.ServiceImpl;
+import com.bikkad.IT.springBootJPA.model.User;
+
+@SpringBootApplication
+public class SpringBootJpa1Application {
+
+	public static void main(String[] args) {
+		ConfigurableApplicationContext context = SpringApplication.run(SpringBootJpa1Application.class, args);
+
+		ServiceImpl bean = context.getBean(ServiceImpl.class);
+
+//		User user = new User();
+//		user.setUserId(1);
+//		user.setUserName("Amit");
+//		user.setUserAge(40);
+//
+//		User user1 = new User();
+//		user1.setUserId(2);
+//		user1.setUserName("Naved");
+//		user1.setUserAge(45);
+//
+//		User user2 = new User();
+//		user2.setUserId(6);
+//		user2.setUserName("Zeeshan");
+//		user2.setUserAge(60);
+//
+//		User user3 = new User();
+//		user3.setUserId(4);
+//		user3.setUserName("Faizan");
+//		user3.setUserAge(32);
+//
+//		User user4 = new User();
+//		user4.setUserId(5);
+//		user4.setUserName("Shyam");
+//		user4.setUserAge(60);
+//		
+//		
+//		User user5 = new User();
+//		user5.setUserId(6);
+//		user5.setUserName("Jaffar");
+//		user5.setUserAge(40);
+//		
+//		User user6 = new User();
+//		user6.setUserId(7);
+//		user6.setUserName("Vilas");
+//		user6.setUserAge(62);
+//		List<User> list = new ArrayList<>();
+//		list.add(user);
+//		list.add(user1);
+//		list.add(user2);
+//		list.add(user3);
+//		list.add(user4);
+//		list.add(user5);
+//		list.add(user6);
+//		
+//
+//		System.out.println(list);
+//
+//		bean.savealluser(list);
+
+//		User findBy = bean.findBy(2);
+//		System.out.println(findBy);
+
+//		List<Integer> asList = Arrays.asList(1,3,5);
+//		List<User> getallId = bean.getallId(asList);
+//		System.out.println(getallId);
+//		
+//		for(User u:getallId) {
+//			System.out.println(u);
+//			
+
+//		List<User> allUser = bean.getAllUser();
+//		System.out.println(allUser);
+//		
+//		for(User u:allUser) {
+//			System.out.println(u);
+//		}
+
+//		boolean contactExists = bean.contactExists(8);
+//		System.out.println(contactExists);
+
+//		long countRecord = bean.countRecord();
+//		System.out.println(countRecord);
+
+		// bean.delete(1);
+//		
+//		User user = new User();
+//		user.setUserId(5);
+//		bean.deleteByObject(user);
+//		
+//		List<Integer> asList = Arrays.asList(3,4);
+//		bean.deletAllByIDContact(asList);
+
+//		List<User> allUser = bean.getAllUser();
+//		System.out.println(allUser);
+//		
+//		for(User usr:allUser) {
+//			System.out.println(usr);
+//		}
+
+//		bean.deleteAllContacts();
+
+		// bean.UserPagination();
+
+//		bean.SortingUser();
+
+//		User name = bean.getContactByUserName("Naved");
+//		System.out.println(name);
+
+//		User age = bean.getContactByUserAge(60);
+//		System.out.println(age);
+
+//		List<User> thanEqual = bean.findByUserAgGreaterThanEqual(30);
+//		
+//		System.out.println(thanEqual);
+
+//		List<User> lessThanEqual = bean.findByUserAgeLessThanEqual(60);
+//		
+//		System.out.println(lessThanEqual);
+
+//		List<User> list = bean.findByUserAgeLessThan(40);
+//		
+//		System.out.println(list);
+
+//		List<User> greaterThan = bean.findByUserAgeGreaterThan(30);
+//		System.out.println(greaterThan);
+
+		User u = new User ();
+		u.setPassword("Naved");
+		u.setPassword("Naved142");
+		bean.saveUser(u);
+//		User loginCheck = bean.LoginCheck("Naved", "Naved142");
+//		System.out.println(loginCheck);
+	}
+
+}

@@ -1,0 +1,42 @@
+package com.bikkad.IT.springBootJPA.Service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.bikkad.IT.springBootJPA.model.User;
+import com.bikkad.IT.springBootJPA.repository.UserRepository;
+@Service
+public class ServiceImpl implements ServiceI {
+
+	@Autowired
+	private UserRepository userRepositry;
+	
+	@Override
+	public void saveUser(User user) {
+		
+		userRepositry.save(user);
+		
+	}
+
+	@Override
+	public void savealluser(List<User> user) {
+		Iterable<User> saveAll = userRepositry.saveAll(user);
+	
+		
+	}
+
+	@Override
+	public User getUserByID(Integer userId) {
+		User user = userRepositry.findById(userId).get();
+		return user;
+	}
+
+	
+	
+	}
+
+	
+

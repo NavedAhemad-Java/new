@@ -1,0 +1,144 @@
+package com.bikkad.IT.springBootJPA.Service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
+
+import com.bikkad.IT.springBootJPA.model.User;
+import com.bikkad.IT.springBootJPA.repository.UserRepository;
+@Service
+public class ServiceImpl implements ServiceI {
+
+	
+	@Autowired
+	private UserRepository userRepositry;
+	
+	@Override
+	public void saveUser(User user) {
+		
+		userRepositry.save(user);
+		
+	}
+
+	@Override
+	public void savealluser(List<User> user) {
+		Iterable<User> saveAll = userRepositry.saveAll(user);
+	
+		
+	}
+
+	@Override
+	public User findBy(Integer UserId) {
+		User user = userRepositry.findById(UserId).get();
+		
+		return user;
+	}
+
+	@Override
+	public List<User> getallId(List<Integer> list) {
+		Iterable<User> byId = userRepositry.findAllById(list);
+		return (List<User>) byId;
+	}
+
+	@Override
+	public List<User> getAllUser() {
+		List<User> findAll = (List<User>) userRepositry.findAll();
+		return (List<User>) findAll;
+	}
+
+	@Override
+	public boolean contactExists(Integer Id) {
+		boolean existsById = userRepositry.existsById(Id);
+		return existsById;
+	}
+
+	@Override
+	public long countRecord() {
+		long count = userRepositry.count();
+		return count;
+	}
+
+	@Override
+	public void delete(int Id) {
+		userRepositry.deleteById(Id);
+		
+	}
+
+	@Override
+	public void deleteByObject(User user) {
+		userRepositry.delete(user);
+		
+	}
+
+	@Override
+	public void deletAllByIDContact(List<Integer>list) {
+		userRepositry.deleteAllById(list);
+		
+		
+		
+	}
+
+	@Override
+	public void deleteAllContacts() {
+		userRepositry.deleteAll();
+		
+	}
+
+	@Override
+	public void UserPagination() {
+		PageRequest of = PageRequest.of(1, 2);
+		userRepositry.findAll(of);
+		
+	}
+
+	@Override
+	public void SortingUser() {
+		List<User> findAll = userRepositry.findAll(Sort.by("userName").descending());
+		
+		for(User u:findAll) {
+			System.out.println(u);
+		}
+		
+	}
+
+	@Override
+	public User getContactByUserAge(int userAge) {
+		 userRepositry.findByUserAge(userAge);
+		return findByUserAge;
+	}
+
+	
+	
+	
+
+	
+	}
+
+	
+
+	
+
+	
+
+	
+
+
+	
+
+	
+
+	
+	
+
+	
+	
+	
+	
+	
+
+	
+
